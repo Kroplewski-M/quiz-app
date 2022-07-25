@@ -10,7 +10,6 @@
 <script>
 import '../public/index.css';
 import questionTemplate from './components/Questions-template.vue';
-import answersTemplate from './components/Answers-template.vue'
 import quiz from '../questions.json';
 import AnswersTemplate from './components/Answers-template.vue';
 
@@ -19,20 +18,22 @@ export default {
   name: 'App',
   components: {
     questionTemplate,
-    answersTemplate,
-    AnswersTemplate
+    AnswersTemplate,
 },
   data(){
     return{
       questions: [],
+      questionsAnswered: 0,
+      correctAnswers: 0,
     }
   },
   methods:{
    },
   mounted(){
-   this.questions =quiz;
-   console.log(this.questions);
-  }
+   this.questions = quiz;
+  // console.log(this.questions.question[0]);
+   console.log(this.questions.questions[0].question);
+  },
 
 }
 </script>
