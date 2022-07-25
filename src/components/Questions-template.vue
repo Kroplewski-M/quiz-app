@@ -6,10 +6,10 @@
     </div>
       <div class="w-[100%] h-[100%] bg-gray-200 rounded-b-md">
       <div>
-        <h1 class="answer">Sample Answer 1</h1>
-        <h1 class="answer">Sample Answer 2</h1>
-        <h1 class="answer">Sample Answer 3</h1>
-        <h1 class="answer rounded-b-md">Sample Answer 4</h1>
+        <h1 class="answer">{{questions.questions[this.index].answers[0].text}}</h1>
+        <h1 class="answer">{{questions.questions[this.index].answers[1].text}}</h1>
+        <h1 class="answer">{{questions.questions[this.index].answers[2].text}}</h1>
+        <h1 class="answer rounded-b-md">{{questions.questions[this.index].answers[3].text}}</h1>
       </div>
     </div>
 </template>

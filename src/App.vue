@@ -27,7 +27,7 @@ export default {
   data(){
     return{
       questions: quiz,
-      questionsAnswered: 1,
+      questionsAnswered: 0,
       amountofQuestions: 4,
       correctAnswers: 0,
     }
