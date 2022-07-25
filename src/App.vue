@@ -1,11 +1,11 @@
 <template>
-<div class="w-[100vw] h-[100vh] bg-blue-500" @click="getQ()">
+<div class="w-[100vw] h-[100vh] bg-blue-500">
   <div class=" mx-auto w-[700px] h-[auto] bg-blue-500 rounded-md text-center pt-10">
-    <questionTemplate :questions="questions" :questionsAnswered="questionsAnswered"  v-if="questionsAnswered < amountofQuestions"></questionTemplate>
+    <questionTemplate v-model:questions="questions" :questionsAnswered="questionsAnswered"  v-if="questionsAnswered < amountofQuestions"></questionTemplate>
     <ResultsTemplate v-else></ResultsTemplate>
  </div>
  <div class="mx-auto w-[100px]">
-  <button v-if="questionsAnswered == amountofQuestions" class="w-[100px] h-[40px] bg-red-400 font-semibold mt-[30px] active:mt-[33px]">Reset</button>
+  <button v-if="questionsAnswered == amountofQuestions" @click="reset()" class="w-[100px] h-[40px] bg-red-400 font-semibold mt-[30px] active:mt-[33px]">Reset</button>
 </div>
 </div>
 </template>
@@ -15,6 +15,7 @@ import '../public/index.css';
 import questionTemplate from './components/Questions-template.vue';
 import quiz from '../questions.json';
 import ResultsTemplate from './components/results-template.vue';
+
 
 
 
@@ -33,15 +34,11 @@ export default {
     }
   },
   methods:{
-    getQ(){
-      console.log("click");
-      console.log(this.questions);
+    reset(){
+      this.questionsAnswered = 0;
+      this.correctAnswers = 0;
     }
    },
-  mount(){
-  
-  },
-
 }
 </script>
 
