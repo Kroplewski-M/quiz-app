@@ -1,0 +1,92 @@
+{
+"questions":[
+    {
+    "question" : "What is a variable?",
+    "answers":[
+        {
+            "text": "A number",
+            "is_correct": false
+        },
+        {
+            "text": "A letter",
+            "is_correct":false
+        },
+        {
+            "text": "Any characteristics, number, or quantity that can be measured or counted",
+            "is_correct":true
+        },
+        {
+            "text":"a sequence of instructions that is continually repeated until a certain condition is reached",
+            "is_correct":false
+        }
+
+    ]
+},
+{
+    "question" : "What is a loop?",
+    "answers":[
+        {
+            "text": "A variable",
+            "is_correct": false
+        },
+        {
+            "text": "A sequence of letters",
+            "is_correct":false
+        },
+        {
+            "text": "Any characteristics, number, or quantity that can be measured or counted",
+            "is_correct":false
+        },
+        {
+            "text":"a sequence of instructions that is continually repeated until a certain condition is reached",
+            "is_correct":true
+        }
+
+    ]
+},
+{
+    "question" : "What is an Algorithm?",
+    "answers":[
+        {
+            "text": "An AI",
+            "is_correct": false
+        },
+        {
+            "text": "A process or set of rules to be followed in calculations or other problem-solving operations",
+            "is_correct":true
+        },
+        {
+            "text": "A variable is any characteristics, number, or quantity that can be measured or counted",
+            "is_correct":false
+        },
+        {
+            "text":"a sequence of instruction s that is continually repeated until a certain condition is reached",
+            "is_correct":false
+        }
+
+    ]
+},
+{
+    "question" : "translate this binary - 1010100",
+    "answers":[
+        {
+            "text": "84",
+            "is_correct": true
+        },
+        {
+            "text": "23",
+            "is_correct":false
+        },
+        {
+            "text": "128",
+            "is_correct":false
+        },
+        {
+            "text":"64",
+            "is_correct":false
+        }
+
+    ]
+}
+]
+}
