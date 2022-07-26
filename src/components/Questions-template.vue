@@ -1,16 +1,14 @@
 <template>
   <div class="absolute w-[100%] max-w-[700px] h-[70px] bg-gray-200 rounded-md"></div>
-    <div class="progress absolute w-[100%] max-w-[700px] h-[70px] bg-red-400 rounded-md z-50" :style="{width: `${this.questionsAnswered / 5 * 100}%`}"></div>
+    <div class="progress absolute w-[100%] max-w-[700px] h-[70px] bg-red-400 rounded-md z-50" :style="{width: `${this.questionsAnswered / 10 * 100}%`}"></div>
     <p class="z-50 relative text-[20px] pt-[20px] font-bold font-mono">{{this.questionsAnswered}} out of 4 questions answered</p>
     <div class="w-[100%] h-[100px] bg-green-500 border-b-2 border-black border-solid ">
       <p class="pt-[47px]">{{questions.questions[this.questionsAnswered].question}}</p>
     </div>
       <div class="w-[100%] h-[100%] bg-gray-200 rounded-b-md">
-      <div>
-        <h1 class="answer">{{questions.questions[this.questionsAnswered].answers[0].text}}</h1>
-        <h1 class="answer">{{questions.questions[this.questionsAnswered].answers[1].text}}</h1>
-        <h1 class="answer">{{questions.questions[this.questionsAnswered].answers[2].text}}</h1>
-        <h1 class="answer rounded-b-md">{{questions.questions[this.questionsAnswered].answers[3].text}}</h1>
+      <div v-for="answer in questions.questions[questionsAnswered].answers" :key="answer.text">
+        <!-- <h1 class="answer">{{questions.questions[this.questionsAnswered].answers[0].text}}</h1> -->
+        <h1 class="answer">{{answer.text}}</h1>
       </div>
     </div>
 </template>
@@ -20,7 +18,7 @@ export default {
   props: ['questions','questionsAnswered'],
   data(){
     return{
-      
+     
     } 
   },
   methods:{
