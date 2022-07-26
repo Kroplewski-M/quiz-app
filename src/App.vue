@@ -1,6 +1,6 @@
 <template>
 <div class="w-[100vw] h-[100vh] bg-blue-500">
-  <div class=" mx-auto w-[700px] h-[auto] bg-blue-500 rounded-md text-center pt-10">
+  <div class=" mx-auto w-[400px] md:w-[700px] h-[auto] bg-blue-500 rounded-md text-center pt-10">
     <questionTemplate @question-answered="questionAnswered" :questions="questions" :questionsAnswered="questionsAnswered"  v-if="questionsAnswered < amountofQuestions"></questionTemplate>
     <ResultsTemplate :correctAnswers="correctAnswers" v-else></ResultsTemplate>
  </div>

@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[100%] h-[200px] bg-purple-400 rounded-md border-2 border-solid border-gray-100">
-    <p class="text-[50px] font-bold text-gray-50 pt-10 drop-shadow-xl">You got {{this.correctAnswers}} out of 4 Correct!</p>
+  <div class="w-[400px] md:w-[100%] h-[230px] md:h-[200px] bg-purple-400 rounded-md border-2 border-solid border-gray-100">
+    <p class="text-[50px] font-bold text-gray-50 md:pt-10 drop-shadow-xl">You got {{this.correctAnswers}} out of 4 Correct!</p>
     <p class="pt-[25px] font-semibold">{{getResponse()}}</p>
   </div>
 </template>

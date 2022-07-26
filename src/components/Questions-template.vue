@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute w-[100%] max-w-[700px] h-[70px] bg-gray-200 rounded-md"></div>
-    <div class="progress absolute w-[100%] max-w-[700px] h-[70px] bg-red-400 rounded-md z-50" :style="{width: `${this.questionsAnswered / 10 * 100}%`}"></div>
+  <div class="absolute w-[400px] md:w-[100%] max-w-[700px] h-[70px] bg-gray-200 rounded-md"></div>
+    <div class="progress absolute w-[100%] max-w-[700px] h-[70px] bg-red-400 rounded-md z-50" :style="{width: `${getWidth()}%` }"></div>
     <p class="z-50 relative text-[20px] pt-[20px] font-bold font-mono">{{this.questionsAnswered}} out of 4 questions answered</p>
     <div class="w-[100%] h-[100px] bg-green-500 border-b-2 border-black border-solid ">
       <p class="pt-[47px]">{{questions.questions[this.questionsAnswered].question}}</p>
@@ -25,6 +25,13 @@ export default {
   methods:{
    selectAnswer(isCorrect){
       this.$emit('question-answered', isCorrect);
+   },
+   getWidth(){
+      if(window.innerWidth > 1500){
+        return (this.questionsAnswered / 10 * 100)
+      }
+      else
+      return (this.questionsAnswered / 7 * 100)
    }
   }
 
