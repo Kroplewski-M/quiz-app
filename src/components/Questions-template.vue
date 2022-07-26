@@ -6,9 +6,9 @@
       <p class="pt-[47px]">{{questions.questions[this.questionsAnswered].question}}</p>
     </div>
       <div class="w-[100%] h-[100%] bg-gray-200 rounded-b-md">
-      <div v-for="answer in questions.questions[questionsAnswered].answers" :key="answer.text">
+      <div v-for="(answer, index) in questions.questions[questionsAnswered].answers" :key="index">
         <!-- <h1 class="answer">{{questions.questions[this.questionsAnswered].answers[0].text}}</h1> -->
-        <h1 class="answer">{{answer.text}}</h1>
+        <h1 class="answer" @click.prevent="selectAnswer(answer.is_correct)">{{answer.text}}</h1>
       </div>
     </div>
 </template>
@@ -16,13 +16,16 @@
 <script>
 export default {
   props: ['questions','questionsAnswered'],
+  emits:['question-answered',],
   data(){
     return{
-     
+
     } 
   },
   methods:{
-   
+   selectAnswer(isCorrect){
+      this.$emit('question-answered', isCorrect);
+   }
   }
 
 }
