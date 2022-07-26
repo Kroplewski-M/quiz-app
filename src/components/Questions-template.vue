@@ -27,11 +27,17 @@ export default {
       this.$emit('question-answered', isCorrect);
    },
    getWidth(){
-      if(window.innerWidth > 1500){
-        return (this.questionsAnswered / 10 * 100)
+      if(window.innerWidth >= 1500){
+        return (this.questionsAnswered / 10 * 100);
       }
+      if(window.innerWidth > 700 || window.innerWidth <= 1000){
+        return (this.questionsAnswered / 5 * 100);
+      }
+       if(window.innerWidth > 1000 || window.innerWidth < 1500){
+        return (this.questionsAnswered / 5 * 100);
+       }
       else
-      return (this.questionsAnswered / 7 * 100)
+      return (this.questionsAnswered / 4 * 100);
    }
   }
 
