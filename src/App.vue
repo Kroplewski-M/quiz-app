@@ -1,6 +1,6 @@
 <template>
 <div class="w-[100vw] h-[100vh] bg-blue-500">
-  <WelcomeTemplate v-if="welcome"></WelcomeTemplate>
+  <WelcomeTemplate @start="start()" v-if="welcome"></WelcomeTemplate>
   <div class=" mx-auto w-[400px] md:w-[700px] h-[auto] bg-blue-500 rounded-md text-center pt-10">
     <questionTemplate @question-answered="questionAnswered" :questions="questions" :questionsAnswered="questionsAnswered" v-if="questionsAnswered < amountofQuestions && welcome == false"></questionTemplate>
     <ResultsTemplate :correctAnswers="correctAnswers" v-else-if="questionsAnswered >= amountofQuestions && welcome == false"></ResultsTemplate>
@@ -48,7 +48,10 @@ export default {
       }
       this.questionsAnswered++;
       console.log(this.correctAnswers);
-    }
+    },
+    start(){
+        this.welcome = false;
+      }
    },
 }
 </script>
